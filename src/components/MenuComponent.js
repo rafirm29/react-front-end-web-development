@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap'
 import { DISHES } from '../shared/dishes';
+import DishDetail from './DishdetailComponent';
 
 export class Menu extends Component {
     constructor(props) {
@@ -8,12 +9,13 @@ export class Menu extends Component {
 
         this.state = {
             dishes: DISHES,
-            selectedDish: null
+            selectedDish: null,
+            comments: null
         };
     }
 
     onDishSelect(dish) {
-        this.setState({ selectedDish: dish });
+        this.setState({ selectedDish: dish, comments: dish.comments });
     }
 
     renderDish(dish) {
@@ -57,7 +59,8 @@ export class Menu extends Component {
                     {menu}
                 </div>
                 <div className="row">
-                    {this.renderDish(this.state.selectedDish)}
+                    <DishDetail dish={this.state.selectedDish} comments={this.state.comments}/>
+                    {/* {this.renderDish(this.state.selectedDish)} */}
                 </div>
             </div>
         )
