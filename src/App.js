@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import Main from './components/MainComponent'
+import React, { Component } from 'react';
+import Main from './components/MainComponent';
 
 export class App extends Component {
   render() {
@@ -7,12 +7,11 @@ export class App extends Component {
       <div>
         <Main />
       </div>
-    )
+    );
   }
 }
 
-export default App
-
+export default App;
 
 // function App() {
 //   return (
