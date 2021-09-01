@@ -8,6 +8,7 @@ import {
   Label,
   Input,
   Col,
+  FormFeedback,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
@@ -52,7 +53,7 @@ class Contact extends Component {
   }
 
   handleBlur = (field) => (evt) => {
-    this.setstate({
+    this.setState({
       touched: { ...this.state.touched, [field]: true },
     });
   };
