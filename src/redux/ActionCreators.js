@@ -61,7 +61,7 @@ export const fetchDishes = () => (dispatch) => {
           var error = new Error(
             'Error ' + response.status + ': ' + response.statusText
           );
-          error.respone = response;
+          error.response = response;
           throw error;
         }
       },
@@ -135,7 +135,7 @@ export const fetchPromos = () => (dispatch) => {
           var error = new Error(
             'Error ' + response.status + ': ' + response.statusText
           );
-          error.respone = response;
+          error.response = response;
           throw error;
         }
       },
