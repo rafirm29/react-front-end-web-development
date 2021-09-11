@@ -26,7 +26,7 @@ class Contact extends Component {
 
   handleSubmit(values) {
     console.log('Current state is: ' + JSON.stringify(values));
-    alert('Current state is: ' + JSON.stringify(values));
+    this.props.postFeedback(values);
     this.props.resetFeedbackForm();
   }
 
@@ -108,14 +108,14 @@ class Contact extends Component {
               onSubmit={(values) => this.handleSubmit(values)}
             >
               <Row className="form-group">
-                <Label htmlFor="firstname" md={2}>
+                <Label htmlFor="firstName" md={2}>
                   First Name
                 </Label>
                 <Col md={10}>
                   <Control.text
-                    model=".firstname"
-                    id="firstname"
-                    name="firstname"
+                    model=".firstName"
+                    id="firstName"
+                    name="firstName"
                     placeholder="First Name"
                     className="form-control"
                     validators={{
@@ -126,7 +126,7 @@ class Contact extends Component {
                   />
                   <Errors
                     className="text-danger"
-                    model=".firstname"
+                    model=".firstName"
                     show="touched"
                     messages={{
                       required: 'Required',
@@ -137,14 +137,14 @@ class Contact extends Component {
                 </Col>
               </Row>
               <Row className="form-group">
-                <Label htmlFor="lasttname" md={2}>
+                <Label htmlFor="lastName" md={2}>
                   Last Name
                 </Label>
                 <Col md={10}>
                   <Control.text
-                    model=".lastname"
-                    id="lastname"
-                    name="lastname"
+                    model=".lastName"
+                    id="lastName"
+                    name="lastName"
                     placeholder="Last Name"
                     className="form-control"
                     validators={{
@@ -155,7 +155,7 @@ class Contact extends Component {
                   />
                   <Errors
                     className="text-danger"
-                    model=".lastname"
+                    model=".lastName"
                     show="touched"
                     messages={{
                       required: 'Required',
